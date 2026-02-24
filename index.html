@@ -171,40 +171,6 @@ UNDER PARAS HOTEL, UDAL CHOWK, MAHOBA 210427</p>
 <footer>
 © 2026 LAL Pathology Mahoba | All Rights Reserved
 </footer>
-<script>
-const cards = document.querySelectorAll('.card');
-window.addEventListener('scroll', () => {
-cards.forEach(card => {
-const cardTop = card.getBoundingClientRect().top;
-if(cardTop < window.innerHeight - 100){
-card.classList.add('show');
-}
-});
-});
-
-/* REPORT SYSTEM */
-
-function downloadReport(){
-const reportId = document.getElementById("reportId").value.trim().toUpperCase();
-const message = document.getElementById("reportMessage");
-
-/* ADD YOUR REPORT IDs HERE */
-const reports = {
-"LPM001": "reports/LPM001.pdf",
-"LPM002": "reports/LPM002.pdf",
-"LPM003": "reports/LPM003.pdf"
-};
-
-if(reports[reportId]){
-window.open(reports[reportId], "_blank");
-message.style.color="green";
-message.innerText="Report found. Downloading...";
-}else{
-message.style.color="red";
-message.innerText="Invalid Report ID. Please contact lab.";
-}
-}
-</script>
   
 <script>
 const cards = document.querySelectorAll('.card');
@@ -220,4 +186,5 @@ card.classList.add('show');
 
 </body>
 </html>
+
 
