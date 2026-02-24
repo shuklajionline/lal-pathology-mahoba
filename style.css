@@ -1,21 +1,174 @@
 *{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:Arial, sans-serif;background:#f7fbff;color:#222;line-height:1.6;}
-header{background:#0f2e4d;color:white;padding:80px 20px;text-align:center;}
-header h1{font-size:34px;margin-bottom:10px;}
-header p{opacity:0.9;}
-nav{background:white;box-shadow:0 2px 8px rgba(0,0,0,0.05);}
-nav ul{display:flex;justify-content:center;list-style:none;padding:15px;}
-nav ul li{margin:0 20px;}
-nav ul li a{text-decoration:none;color:#0f2e4d;font-weight:bold;}
-.container{max-width:1100px;margin:auto;padding:60px 20px;}
-h2{text-align:center;margin-bottom:30px;color:#0f2e4d;}
-.btn{display:inline-block;padding:12px 25px;background:#00a86b;color:white;text-decoration:none;border-radius:6px;margin-top:15px;}
-.hero-btn{font-size:16px;}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
-.card{background:white;padding:20px;border-radius:8px;box-shadow:0 5px 15px rgba(0,0,0,0.06);}
-.review-box{background:white;padding:20px;border-radius:8px;box-shadow:0 5px 15px rgba(0,0,0,0.06);margin-bottom:20px;}
-.stars{color:gold;font-size:18px;margin:5px 0;}
-input,textarea,select{width:100%;padding:10px;margin-bottom:10px;border:1px solid #ccc;border-radius:5px;}
-footer{background:#081c30;color:white;text-align:center;padding:20px;margin-top:40px;}
-.whatsapp{position:fixed;bottom:20px;right:20px;background:#25D366;color:white;width:55px;height:55px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;text-decoration:none;}
-@media(max-width:600px){nav ul{flex-direction:column;text-align:center;}nav ul li{margin:10px 0;}}
+
+body{
+font-family:Arial, sans-serif;
+background:#f7fbff;
+color:#222;
+line-height:1.6;
+}
+
+/* HEADER */
+header{
+background:#0f2e4d;
+color:white;
+padding:60px 20px;
+text-align:center;
+}
+
+header h1{
+font-size:26px;
+margin-bottom:10px;
+}
+
+header p{
+font-size:14px;
+opacity:0.9;
+}
+
+/* NAVIGATION */
+nav{
+background:white;
+box-shadow:0 2px 8px rgba(0,0,0,0.05);
+}
+
+nav ul{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+list-style:none;
+padding:12px;
+}
+
+nav ul li{
+margin:8px 15px;
+}
+
+nav ul li a{
+text-decoration:none;
+color:#0f2e4d;
+font-weight:bold;
+font-size:14px;
+}
+
+/* CONTAINER */
+.container{
+max-width:1100px;
+margin:auto;
+padding:40px 18px;
+}
+
+h2{
+text-align:center;
+margin-bottom:25px;
+font-size:20px;
+color:#0f2e4d;
+}
+
+/* BUTTONS */
+.btn{
+display:inline-block;
+width:100%;
+text-align:center;
+padding:14px;
+background:#00a86b;
+color:white;
+text-decoration:none;
+border-radius:6px;
+margin-top:15px;
+font-size:15px;
+font-weight:bold;
+}
+
+.hero-btn{
+max-width:280px;
+margin:auto;
+display:block;
+}
+
+/* GRID */
+.grid{
+display:grid;
+grid-template-columns:1fr;
+gap:15px;
+}
+
+.card{
+background:white;
+padding:18px;
+border-radius:8px;
+box-shadow:0 4px 12px rgba(0,0,0,0.06);
+font-size:14px;
+}
+
+/* FORMS */
+input, textarea, select{
+width:100%;
+padding:12px;
+margin-bottom:12px;
+border:1px solid #ccc;
+border-radius:6px;
+font-size:14px;
+}
+
+/* REVIEWS */
+.review-box{
+background:white;
+padding:15px;
+border-radius:8px;
+box-shadow:0 4px 12px rgba(0,0,0,0.06);
+margin-bottom:15px;
+font-size:14px;
+}
+
+.stars{
+color:gold;
+font-size:16px;
+margin:5px 0;
+}
+
+/* FOOTER */
+footer{
+background:#081c30;
+color:white;
+text-align:center;
+padding:18px;
+margin-top:40px;
+font-size:13px;
+}
+
+/* FLOATING WHATSAPP */
+.whatsapp{
+position:fixed;
+bottom:18px;
+right:18px;
+background:#25D366;
+color:white;
+width:52px;
+height:52px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:22px;
+text-decoration:none;
+box-shadow:0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* DESKTOP ENHANCEMENT */
+@media(min-width:768px){
+
+header h1{font-size:34px;}
+header p{font-size:16px;}
+
+h2{font-size:26px;}
+
+.grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+.btn{
+width:auto;
+padding:12px 25px;
+}
+
+}
