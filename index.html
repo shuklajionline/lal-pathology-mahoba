@@ -1,18 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LAL Pathology Lab Mahoba | Best Pathology Lab in Mahoba</title>
-<meta name="description" content="LAL Pathology Lab Mahoba offers blood tests, health packages and diagnostic services in Mahoba. Located at Udal Chowk. Call 9889412099.">
-<meta name="keywords" content="Best Pathology Lab in Mahoba, Blood Test Mahoba, Diagnostic Centre Mahoba">
+<meta name="description" content="LAL Pathology Lab Mahoba offers blood tests and diagnostic services in Mahoba. Book your test on WhatsApp today.">
+<meta name="keywords" content="Pathology Lab Mahoba, Blood Test Mahoba, Diagnostic Centre Mahoba">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
 <h1>LAL PATHOLOGY LAB MAHOBA</h1>
-<p>Trusted Diagnostic Centre in Mahoba</p>
+<p>Trusted & Modern Diagnostic Centre in Mahoba</p>
+<a href="https://wa.me/919889412099" class="btn hero-btn">Book Your Test on WhatsApp</a>
 </header>
 
 <nav>
@@ -25,11 +24,30 @@
 </nav>
 
 <section class="container">
-<h2>Welcome to LAL Pathology Lab Mahoba</h2>
-<p style="text-align:center;">
-We provide accurate and affordable diagnostic services including blood tests, thyroid tests, sugar tests, CBC, lipid profile and more in Mahoba.
-</p>
+<h2>Why Choose Us</h2>
+<div class="grid">
+<div class="card">✔ Accurate Reports</div>
+<div class="card">✔ Advanced Lab Equipment</div>
+<div class="card">✔ Experienced Staff</div>
+<div class="card">✔ Quick Report Delivery</div>
+</div>
+</section>
+
+<section class="container">
+<h2>Popular Tests</h2>
+<div class="grid">
+<div class="card">Complete Blood Count (CBC)</div>
+<div class="card">Thyroid Profile</div>
+<div class="card">Lipid Profile</div>
+<div class="card">Full Body Checkup</div>
+</div>
 <a href="services.html" class="btn">View All Tests</a>
+</section>
+
+<section class="container">
+<h2>Patient Reviews Preview</h2>
+<div id="reviewPreview"></div>
+<a href="reviews.html" class="btn">Read & Add Review</a>
 </section>
 
 <footer>
@@ -37,6 +55,18 @@ We provide accurate and affordable diagnostic services including blood tests, th
 </footer>
 
 <a href="https://wa.me/919889412099" class="whatsapp" target="_blank">💬</a>
+
+<script>
+function loadPreview(){
+let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
+let preview = document.getElementById("reviewPreview");
+preview.innerHTML="";
+reviews.slice(-2).forEach(r=>{
+preview.innerHTML+=`<div class="review-box"><strong>${r.name}</strong><div class="stars">${"★".repeat(r.rating)}</div><p>${r.message}</p></div>`;
+});
+}
+loadPreview();
+</script>
 
 </body>
 </html>
