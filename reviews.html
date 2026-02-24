@@ -6,7 +6,9 @@
 </head>
 <body>
 
-<header><h1>Patient Reviews</h1></header>
+<header>
+<h1>Patient Reviews</h1>
+</header>
 
 <nav>
 <ul>
@@ -19,21 +21,51 @@
 
 <section class="container">
 
-<div class="review-box">
-<h3>Rahul Verma</h3>
-<div class="stars">★★★★★</div>
-<p>Very accurate reports and polite staff.</p>
-</div>
+<h2>Leave Your Review</h2>
+<input type="text" id="name" placeholder="Your Name">
+<select id="rating">
+<option value="5">5 Stars</option>
+<option value="4">4 Stars</option>
+<option value="3">3 Stars</option>
+<option value="2">2 Stars</option>
+<option value="1">1 Star</option>
+</select>
+<textarea id="message" placeholder="Write your review"></textarea>
+<button class="btn" onclick="addReview()">Submit Review</button>
 
-<div class="review-box">
-<h3>Priya Singh</h3>
-<div class="stars">★★★★★</div>
-<p>Best pathology lab in Mahoba. Quick service.</p>
-</div>
+<h2>All Reviews</h2>
+<div id="reviewsList"></div>
 
 </section>
 
 <footer>© 2026 LAL Pathology Lab Mahoba</footer>
+
+<script>
+function addReview(){
+let name=document.getElementById("name").value;
+let rating=document.getElementById("rating").value;
+let message=document.getElementById("message").value;
+
+if(name && message){
+let reviews=JSON.parse(localStorage.getItem("reviews"))||[];
+reviews.push({name,rating,message});
+localStorage.setItem("reviews",JSON.stringify(reviews));
+displayReviews();
+document.getElementById("name").value="";
+document.getElementById("message").value="";
+}
+}
+
+function displayReviews(){
+let reviews=JSON.parse(localStorage.getItem("reviews"))||[];
+let list=document.getElementById("reviewsList");
+list.innerHTML="";
+reviews.forEach(r=>{
+list.innerHTML+=`<div class="review-box"><strong>${r.name}</strong><div class="stars">${"★".repeat(r.rating)}</div><p>${r.message}</p></div>`;
+});
+}
+displayReviews();
+</script>
 
 </body>
 </html>
