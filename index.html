@@ -144,7 +144,19 @@ LAL पैथोलॉजी महोबा सटीक, किफायती
 </div>
 </div>
 </section>
+<section>
+<h2>Download Report | रिपोर्ट डाउनलोड करें</h2>
 
+<div style="max-width:500px;margin:30px auto;text-align:center;">
+<input type="text" id="reportId" placeholder="Enter Report ID / रिपोर्ट आईडी दर्ज करें"
+style="width:100%;padding:12px;border-radius:8px;border:1px solid #ccc;margin-bottom:15px;">
+
+<button onclick="downloadReport()" class="btn">Download Report</button>
+
+<p id="reportMessage" style="margin-top:15px;color:red;"></p>
+</div>
+</section>
+  
 <section>
 <div class="contact-box">
 <h2>Contact Us | संपर्क करें</h2>
@@ -159,7 +171,41 @@ UNDER PARAS HOTEL, UDAL CHOWK, MAHOBA 210427</p>
 <footer>
 © 2026 LAL Pathology Mahoba | All Rights Reserved
 </footer>
+<script>
+const cards = document.querySelectorAll('.card');
+window.addEventListener('scroll', () => {
+cards.forEach(card => {
+const cardTop = card.getBoundingClientRect().top;
+if(cardTop < window.innerHeight - 100){
+card.classList.add('show');
+}
+});
+});
 
+/* REPORT SYSTEM */
+
+function downloadReport(){
+const reportId = document.getElementById("reportId").value.trim().toUpperCase();
+const message = document.getElementById("reportMessage");
+
+/* ADD YOUR REPORT IDs HERE */
+const reports = {
+"LPM001": "reports/LPM001.pdf",
+"LPM002": "reports/LPM002.pdf",
+"LPM003": "reports/LPM003.pdf"
+};
+
+if(reports[reportId]){
+window.open(reports[reportId], "_blank");
+message.style.color="green";
+message.innerText="Report found. Downloading...";
+}else{
+message.style.color="red";
+message.innerText="Invalid Report ID. Please contact lab.";
+}
+}
+</script>
+  
 <script>
 const cards = document.querySelectorAll('.card');
 window.addEventListener('scroll', () => {
@@ -174,3 +220,4 @@ card.classList.add('show');
 
 </body>
 </html>
+
