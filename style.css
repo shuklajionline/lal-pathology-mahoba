@@ -71,3 +71,15 @@ h2{border-left:5px solid var(--red);padding-left:10px}
 .num{color:var(--red)}
 footer{background:#2c1d38}
 .steps li:before{background:var(--red)}
+
+/* dynamic content */
+.bar{padding:10px 16px;text-align:center;font-weight:700}
+.bar[hidden]{display:none}
+.bar.offer{background:var(--red);color:#fff}
+.bar.offer a{color:#fff;text-decoration:underline}
+.bar.notice{background:#fff3cd;color:#5c4400}
+.price{font-weight:700;color:var(--red)!important;font-size:1rem!important}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+.gallery figure{margin:0;border-radius:12px;overflow:hidden;background:#fff;border:1px solid var(--a)}
+.gallery img{width:100%;height:190px;object-fit:cover;display:block}
+.gallery figcaption{padding:8px 10px;font-size:.85rem;color:var(--m)}
