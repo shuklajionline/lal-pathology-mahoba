@@ -1,71 +1,60 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-<title>Reviews - LAL Pathology Lab Mahoba</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Patient Reviews | Shree Lal Pathology Lab Mahoba</title>
+<meta name="description" content="Read and share reviews of Shree Lal Pathology Lab, Mahoba.">
+<link rel="canonical" href="https://shuklajionline.github.io/lal-pathology-mahoba/reviews.html">
+<meta name="theme-color" content="#0b6e4f">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<header>
-<h1>Patient Reviews</h1>
-</header>
-
-<nav>
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="services.html">Services</a></li>
-<li><a href="reviews.html">Reviews</a></li>
-<li><a href="contact.html">Contact</a></li>
-</ul>
-</nav>
-
-<section class="container">
-
-<h2>Leave Your Review</h2>
-<input type="text" id="name" placeholder="Your Name">
-<select id="rating">
-<option value="5">5 Stars</option>
-<option value="4">4 Stars</option>
-<option value="3">3 Stars</option>
-<option value="2">2 Stars</option>
-<option value="1">1 Star</option>
-</select>
-<textarea id="message" placeholder="Write your review"></textarea>
-<button class="btn" onclick="addReview()">Submit Review</button>
-
-<h2>All Reviews</h2>
-<div id="reviewsList"></div>
-
-</section>
-
-<footer>© 2026 LAL Pathology Lab Mahoba</footer>
-
+<header><div class="wrap">
+ <a class="logo" href="index.html">Shree Lal Pathology Lab<small>Mahoba · Franchise of Dr. Paliwal Diagnostics</small></a>
+ <nav class="nav"><a href="index.html">Home</a><a href="services.html">Services</a><a href="reviews.html" class=on>Reviews</a><a href="contact.html">Contact</a></nav>
+ <a class="btn" href="tel:+919889412099">📞 Call Now</a>
+</div></header>
+<div class="page-hero"><div class="wrap"><h1>Patient Reviews</h1><p>Share your experience with us</p></div></div>
+<main>
+<section><div class="wrap">
+ <h2>Leave Your Review</h2>
+ <p class="sub">Reviews added here are saved in your own browser only. To help others find us, please also review us on Google Maps.</p>
+ <form class="rv" onsubmit="addReview();return false">
+  <input type="text" id="name" placeholder="Your Name">
+  <select id="rating"><option value="5">5 Stars</option><option value="4">4 Stars</option><option value="3">3 Stars</option><option value="2">2 Stars</option><option value="1">1 Star</option></select>
+  <textarea id="message" placeholder="Write your review"></textarea>
+  <button class="btn" type="submit">Submit Review</button>
+ </form>
+ <h2 style="margin-top:28px">All Reviews</h2>
+ <div id="reviewsList"></div>
+</div></section>
 <script>
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
 function addReview(){
-let name=document.getElementById("name").value;
-let rating=document.getElementById("rating").value;
-let message=document.getElementById("message").value;
-
-if(name && message){
-let reviews=JSON.parse(localStorage.getItem("reviews"))||[];
-reviews.push({name,rating,message});
-localStorage.setItem("reviews",JSON.stringify(reviews));
-displayReviews();
-document.getElementById("name").value="";
-document.getElementById("message").value="";
+ var name=document.getElementById("name").value.trim(),rating=document.getElementById("rating").value,message=document.getElementById("message").value.trim();
+ if(name&&message){
+  var r=[];try{r=JSON.parse(localStorage.getItem("reviews"))||[]}catch(e){}
+  r.push({name:name,rating:rating,message:message});
+  try{localStorage.setItem("reviews",JSON.stringify(r))}catch(e){}
+  document.getElementById("name").value="";document.getElementById("message").value="";
+  displayReviews();
+ }
 }
-}
-
 function displayReviews(){
-let reviews=JSON.parse(localStorage.getItem("reviews"))||[];
-let list=document.getElementById("reviewsList");
-list.innerHTML="";
-reviews.forEach(r=>{
-list.innerHTML+=`<div class="review-box"><strong>${r.name}</strong><div class="stars">${"★".repeat(r.rating)}</div><p>${r.message}</p></div>`;
-});
+ var r=[];try{r=JSON.parse(localStorage.getItem("reviews"))||[]}catch(e){}
+ var l=document.getElementById("reviewsList");l.innerHTML="";
+ r.forEach(function(x){l.innerHTML+='<div class="review-box"><strong>'+esc(x.name)+'</strong><div class="stars">'+"★".repeat(+x.rating)+'</div><p>'+esc(x.message)+'</p></div>'});
+ if(!r.length)l.innerHTML='<p class="note">No reviews yet.</p>';
 }
 displayReviews();
 </script>
-
+</main>
+<footer><div class="wrap">
+ <span class="footlinks"><a href="index.html">Home</a><a href="services.html">Services</a><a href="reviews.html">Reviews</a><a href="contact.html">Contact</a></span><br>
+ <strong>Shree Lal Pathology Lab, Mahoba</strong> – Under Paras Hotel, Udal Chowk, Mahoba 210427 · 9889412099 · 8318700812<br>
+ Blood test, thyroid test, home sample collection in Mahoba district. Test results must be interpreted by a qualified doctor. © 2026 Shree Lal Pathology Lab.
+</div></footer>
+<div class="sticky"><a class="c" href="tel:+919889412099">📞 Call</a><a class="w" href="https://wa.me/919889412099?text=Hello%2C%20I%20want%20to%20book%20a%20test" rel="noopener">💬 WhatsApp</a></div>
 </body>
 </html>
