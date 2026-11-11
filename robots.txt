@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://shuklajionline.github.io/lal-pathology-mahoba/sitemap.xml
