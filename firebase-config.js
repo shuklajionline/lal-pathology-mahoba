@@ -1,9 +1,7 @@
-// Paste your Firebase web-app config here (Firebase console -> Project settings -> Your apps -> Web app).
-// These values are NOT secret; security comes from the Firestore rules in ADMIN-SETUP.md.
-// While the values below still start with "PASTE", the website simply shows its built-in static content.
+// Firebase web-app config. These values are NOT secret; security comes from the Firestore rules in ADMIN-SETUP.md.
 export const firebaseConfig = {
-  apiKey: "PASTE_API_KEY",
-  authDomain: "PASTE_PROJECT_ID.firebaseapp.com",
-  projectId: "PASTE_PROJECT_ID",
-  appId: "PASTE_APP_ID"
+  apiKey: "AIzaSyAhdtbQe5Z1HHyISm0YMtl3JgEg9NFWamA",
+  authDomain: "shree-lal-pathology.firebaseapp.com",
+  projectId: "shree-lal-pathology",
+  appId: "1:312881535650:web:faac196cfd5b36992f95fb"
 };
